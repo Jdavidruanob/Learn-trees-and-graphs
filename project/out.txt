@@ -1,0 +1,327 @@
+{(9, 13): 15, (9, 6): 55, (6, 14): 39, (2, 5): 39}
+Initial low=41, high=62915
+Trying mid=31478
+u 9 to v 6
+taxes[u - 1] 24 + cost 1265
+taxes[v - 1] 40 + cost 1265
+u 6 to v 14
+taxes[u - 1] 40 + cost 1248
+taxes[v - 1] 41 + cost 1248
+u 2 to v 5
+taxes[u - 1] 5 + cost 234
+taxes[v - 1] 4 + cost 234
+u 9 to v 13
+taxes[u - 1] 1289 + cost 1275
+taxes[v - 1] 2 + cost 1275
+Can distribute: new high=31477
+Trying mid=15759
+u 9 to v 6
+taxes[u - 1] 24 + cost 1265
+taxes[v - 1] 40 + cost 1265
+u 6 to v 14
+taxes[u - 1] 40 + cost 1248
+taxes[v - 1] 41 + cost 1248
+u 2 to v 5
+taxes[u - 1] 5 + cost 234
+taxes[v - 1] 4 + cost 234
+u 9 to v 13
+taxes[u - 1] 1289 + cost 1275
+taxes[v - 1] 2 + cost 1275
+Can distribute: new high=15758
+Trying mid=7899
+u 9 to v 6
+taxes[u - 1] 24 + cost 1265
+taxes[v - 1] 40 + cost 1265
+u 6 to v 14
+taxes[u - 1] 40 + cost 1248
+taxes[v - 1] 41 + cost 1248
+u 2 to v 5
+taxes[u - 1] 5 + cost 234
+taxes[v - 1] 4 + cost 234
+u 9 to v 13
+taxes[u - 1] 1289 + cost 1275
+taxes[v - 1] 2 + cost 1275
+Can distribute: new high=7898
+Trying mid=3969
+u 9 to v 6
+taxes[u - 1] 24 + cost 1265
+taxes[v - 1] 40 + cost 1265
+u 6 to v 14
+taxes[u - 1] 40 + cost 1248
+taxes[v - 1] 41 + cost 1248
+u 2 to v 5
+taxes[u - 1] 5 + cost 234
+taxes[v - 1] 4 + cost 234
+u 9 to v 13
+taxes[u - 1] 1289 + cost 1275
+taxes[v - 1] 2 + cost 1275
+Can distribute: new high=3968
+Trying mid=2004
+u 9 to v 6
+taxes[u - 1] 24 + cost 1265
+taxes[v - 1] 40 + cost 1265
+u 6 to v 14
+taxes[u - 1] 40 + cost 1248
+taxes[v - 1] 41 + cost 1248
+u 2 to v 5
+taxes[u - 1] 5 + cost 234
+taxes[v - 1] 4 + cost 234
+u 9 to v 13
+taxes[u - 1] 1289 + cost 1275
+taxes[v - 1] 2 + cost 1275
+Can distribute: new high=2003
+Trying mid=1022
+u 9 to v 6
+taxes[u - 1] 24 + cost 1265
+taxes[v - 1] 40 + cost 1265
+Cannot distribute: u=9, v=6, cost=1265 L23 X K55, limit=1022
+Cannot distribute: new low=1023
+Trying mid=1513
+u 9 to v 6
+taxes[u - 1] 24 + cost 1265
+taxes[v - 1] 40 + cost 1265
+u 6 to v 14
+taxes[u - 1] 40 + cost 1248
+taxes[v - 1] 41 + cost 1248
+u 2 to v 5
+taxes[u - 1] 5 + cost 234
+taxes[v - 1] 4 + cost 234
+u 9 to v 13
+taxes[u - 1] 1289 + cost 1275
+taxes[v - 1] 2 + cost 1275
+Can distribute: new high=1512
+Trying mid=1267
+u 9 to v 6
+taxes[u - 1] 24 + cost 1265
+taxes[v - 1] 40 + cost 1265
+Cannot distribute: u=9, v=6, cost=1265 L23 X K55, limit=1267
+Cannot distribute: new low=1268
+Trying mid=1390
+u 9 to v 6
+taxes[u - 1] 24 + cost 1265
+taxes[v - 1] 40 + cost 1265
+u 6 to v 14
+taxes[u - 1] 40 + cost 1248
+taxes[v - 1] 41 + cost 1248
+u 2 to v 5
+taxes[u - 1] 5 + cost 234
+taxes[v - 1] 4 + cost 234
+u 9 to v 13
+taxes[u - 1] 1289 + cost 1275
+taxes[v - 1] 2 + cost 1275
+Can distribute: new high=1389
+Trying mid=1328
+u 9 to v 6
+taxes[u - 1] 24 + cost 1265
+taxes[v - 1] 40 + cost 1265
+u 6 to v 14
+taxes[u - 1] 40 + cost 1248
+taxes[v - 1] 41 + cost 1248
+u 2 to v 5
+taxes[u - 1] 5 + cost 234
+taxes[v - 1] 4 + cost 234
+u 9 to v 13
+taxes[u - 1] 1289 + cost 1275
+taxes[v - 1] 2 + cost 1275
+Can distribute: new high=1327
+Trying mid=1297
+u 9 to v 6
+taxes[u - 1] 24 + cost 1265
+taxes[v - 1] 40 + cost 1265
+u 6 to v 14
+taxes[u - 1] 40 + cost 1248
+taxes[v - 1] 41 + cost 1248
+u 2 to v 5
+taxes[u - 1] 5 + cost 234
+taxes[v - 1] 4 + cost 234
+u 9 to v 13
+taxes[u - 1] 1289 + cost 1275
+taxes[v - 1] 2 + cost 1275
+Can distribute: new high=1296
+Trying mid=1282
+u 9 to v 6
+taxes[u - 1] 24 + cost 1265
+taxes[v - 1] 40 + cost 1265
+Cannot distribute: u=9, v=6, cost=1265 L23 X K55, limit=1282
+Cannot distribute: new low=1283
+Trying mid=1289
+u 9 to v 6
+taxes[u - 1] 24 + cost 1265
+taxes[v - 1] 40 + cost 1265
+u 6 to v 14
+taxes[u - 1] 40 + cost 1248
+taxes[v - 1] 41 + cost 1248
+u 2 to v 5
+taxes[u - 1] 5 + cost 234
+taxes[v - 1] 4 + cost 234
+u 9 to v 13
+taxes[u - 1] 1289 + cost 1275
+taxes[v - 1] 2 + cost 1275
+Can distribute: new high=1288
+Trying mid=1285
+u 9 to v 6
+taxes[u - 1] 24 + cost 1265
+taxes[v - 1] 40 + cost 1265
+Cannot distribute: u=9, v=6, cost=1265 L23 X K55, limit=1285
+Cannot distribute: new low=1286
+Trying mid=1287
+u 9 to v 6
+taxes[u - 1] 24 + cost 1265
+taxes[v - 1] 40 + cost 1265
+Cannot distribute: u=9, v=6, cost=1265 L23 X K55, limit=1287
+Cannot distribute: new low=1288
+Trying mid=1288
+u 9 to v 6
+taxes[u - 1] 24 + cost 1265
+taxes[v - 1] 40 + cost 1265
+Cannot distribute: u=9, v=6, cost=1265 L23 X K55, limit=1288
+Cannot distribute: new low=1289
+Final result=1289
+Case #1: The highest tax that must be paid to Emperor Zlatan is 1289.
+
+{(1, 2): 1}
+Initial low=10, high=35
+Trying mid=22
+u 1 to v 2
+taxes[u - 1] 5 + cost 10
+taxes[v - 1] 10 + cost 10
+Can distribute: new high=21
+Trying mid=15
+u 1 to v 2
+taxes[u - 1] 5 + cost 10
+taxes[v - 1] 10 + cost 10
+Can distribute: new high=14
+Trying mid=12
+u 1 to v 2
+taxes[u - 1] 5 + cost 10
+taxes[v - 1] 10 + cost 10
+Cannot distribute: u=1, v=2, cost=10 L10 X K1, limit=12
+Cannot distribute: new low=13
+Trying mid=13
+u 1 to v 2
+taxes[u - 1] 5 + cost 10
+taxes[v - 1] 10 + cost 10
+Cannot distribute: u=1, v=2, cost=10 L10 X K1, limit=13
+Cannot distribute: new low=14
+Trying mid=14
+u 1 to v 2
+taxes[u - 1] 5 + cost 10
+taxes[v - 1] 10 + cost 10
+Cannot distribute: u=1, v=2, cost=10 L10 X K1, limit=14
+Cannot distribute: new low=15
+Final result=15
+Case #2: The highest tax that must be paid to Emperor Zlatan is 15.
+
+{(1, 5): 5, (4, 6): 5, (1, 4): 8}
+Initial low=60, high=822
+Trying mid=441
+u 1 to v 4
+taxes[u - 1] 10 + cost 48
+taxes[v - 1] 40 + cost 48
+u 1 to v 5
+taxes[u - 1] 58 + cost 30
+taxes[v - 1] 50 + cost 30
+u 4 to v 6
+taxes[u - 1] 40 + cost 10
+taxes[v - 1] 60 + cost 10
+Can distribute: new high=440
+Trying mid=250
+u 1 to v 4
+taxes[u - 1] 10 + cost 48
+taxes[v - 1] 40 + cost 48
+u 1 to v 5
+taxes[u - 1] 58 + cost 30
+taxes[v - 1] 50 + cost 30
+u 4 to v 6
+taxes[u - 1] 40 + cost 10
+taxes[v - 1] 60 + cost 10
+Can distribute: new high=249
+Trying mid=154
+u 1 to v 4
+taxes[u - 1] 10 + cost 48
+taxes[v - 1] 40 + cost 48
+u 1 to v 5
+taxes[u - 1] 58 + cost 30
+taxes[v - 1] 50 + cost 30
+u 4 to v 6
+taxes[u - 1] 40 + cost 10
+taxes[v - 1] 60 + cost 10
+Can distribute: new high=153
+Trying mid=106
+u 1 to v 4
+taxes[u - 1] 10 + cost 48
+taxes[v - 1] 40 + cost 48
+u 1 to v 5
+taxes[u - 1] 58 + cost 30
+taxes[v - 1] 50 + cost 30
+u 4 to v 6
+taxes[u - 1] 40 + cost 10
+taxes[v - 1] 60 + cost 10
+Can distribute: new high=105
+Trying mid=82
+u 1 to v 4
+taxes[u - 1] 10 + cost 48
+taxes[v - 1] 40 + cost 48
+u 1 to v 5
+taxes[u - 1] 58 + cost 30
+taxes[v - 1] 50 + cost 30
+u 4 to v 6
+taxes[u - 1] 40 + cost 10
+taxes[v - 1] 60 + cost 10
+Can distribute: new high=81
+Trying mid=70
+u 1 to v 4
+taxes[u - 1] 10 + cost 48
+taxes[v - 1] 40 + cost 48
+u 1 to v 5
+taxes[u - 1] 58 + cost 30
+taxes[v - 1] 50 + cost 30
+Cannot distribute: u=1, v=5, cost=30 L6 X K5, limit=70
+Cannot distribute: new low=71
+Trying mid=76
+u 1 to v 4
+taxes[u - 1] 10 + cost 48
+taxes[v - 1] 40 + cost 48
+u 1 to v 5
+taxes[u - 1] 58 + cost 30
+taxes[v - 1] 50 + cost 30
+Cannot distribute: u=1, v=5, cost=30 L6 X K5, limit=76
+Cannot distribute: new low=77
+Trying mid=79
+u 1 to v 4
+taxes[u - 1] 10 + cost 48
+taxes[v - 1] 40 + cost 48
+u 1 to v 5
+taxes[u - 1] 58 + cost 30
+taxes[v - 1] 50 + cost 30
+Cannot distribute: u=1, v=5, cost=30 L6 X K5, limit=79
+Cannot distribute: new low=80
+Trying mid=80
+u 1 to v 4
+taxes[u - 1] 10 + cost 48
+taxes[v - 1] 40 + cost 48
+u 1 to v 5
+taxes[u - 1] 58 + cost 30
+taxes[v - 1] 50 + cost 30
+u 4 to v 6
+taxes[u - 1] 40 + cost 10
+taxes[v - 1] 60 + cost 10
+Can distribute: new high=79
+Final result=80
+Case #3: The highest tax that must be paid to Emperor Zlatan is 80.
+
+{}
+Initial low=30, high=60
+Trying mid=45
+Can distribute: new high=44
+Trying mid=37
+Can distribute: new high=36
+Trying mid=33
+Can distribute: new high=32
+Trying mid=31
+Can distribute: new high=30
+Trying mid=30
+Can distribute: new high=29
+Final result=30
+Case #4: The highest tax that must be paid to Emperor Zlatan is 30.
+
