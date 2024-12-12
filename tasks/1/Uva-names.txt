@@ -1,0 +1,8 @@
+127 - "Accordian" Patience
+860 - Entropy Text Analyzer
+11234 - Expressions
+//ZOJ 1200 Mining No in UVa
+12651 - Triangles
+
+
+
