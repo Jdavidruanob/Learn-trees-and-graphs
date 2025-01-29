@@ -14,6 +14,9 @@ int main(){
     while (n != 0) {
         scanf("%d", &n);
 
+
+        
+
     }
 
     
