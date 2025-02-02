@@ -47,9 +47,8 @@ int main() {
                 times[inSeat].first += m;
                 time += m;
             }
-
             if (time < n) {
-                time += 2; // Tiempo de intercambio
+                time += 2; 
 
                 if (time >= n) {
                     flag = false;
