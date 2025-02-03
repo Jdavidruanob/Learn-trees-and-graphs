@@ -1,3 +1,4 @@
+/* Jose David Ruano Burbano 8982982 */
 #include <queue>
 #include <iostream>
 #include <string>
@@ -41,18 +42,17 @@ int main() {
         while (flag) {
             if (time + m > n) { 
                 times[inSeat].first += (n - time);
-                time = n;
                 flag = false;
-            } else {
+            }
+            else {
                 times[inSeat].first += m;
                 time += m;
             }
             if (time < n) {
                 time += 2; 
 
-                if (time >= n) {
-                    flag = false;
-                } else {
+                if (time >= n)  flag = false;
+                else {
                     string next = times[inSeat].second.front();
                     times[inSeat].second.pop();
                     times[inSeat].second.push(next);

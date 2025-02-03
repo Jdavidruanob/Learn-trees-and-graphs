@@ -1,3 +1,4 @@
+""" Jose David Ruano Burbano 8982982 """
 from collections import deque
 from sys import stdin
 from math import sqrt
@@ -7,19 +8,19 @@ def factorize(n):
     stack.append((n, 2, [])) 
 
     while len(stack) > 0:
-        current, start, current_factors =  stack.popleft()
-        if len(current_factors) > 1 and current == 1:
-            current_factors_aux = current_factors
-            result.appendleft(current_factors_aux)
+        actual, start, actual_factors =  stack.popleft()
+        if len(actual_factors) > 1 and actual == 1:
+            actual_factors_aux = actual_factors
+            result.appendleft(actual_factors_aux)
         else:
             i = start
-            while i <= int(sqrt(current)):
-                if current % i == 0:
-                    stack.appendleft((current // i, i, current_factors + [i]))
+            while i <= int(sqrt(actual)):
+                if actual % i == 0:
+                    stack.appendleft((actual // i, i, actual_factors + [i]))
                 i+= 1
 
-            if current >= start and len(current_factors) > 0:
-                result.appendleft(current_factors + [current])
+            if actual >= start and len(actual_factors) > 0:
+                result.appendleft(actual_factors + [actual])
         
     return result
 

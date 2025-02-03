@@ -1,3 +1,4 @@
+""" Jose David Ruano Burbano 8982982 """
 from sys import stdin
 import heapq
 
@@ -5,15 +6,14 @@ def main():
     n, k = map(int, stdin.readline().split())
     
     while n != 0 and k != 0:
-        count = {}  # Diccionario para contar repeticiones
-        serials = {}  # Diccionario para guardar el numero de serie más alto
+        count = {} 
+        serials = {}  
 
         for i in range(n):
             card, num = stdin.readline().split()
             num = int(num)
             if card in count:
                 count[card] += 1
-                serials[card] = max(serials[card], num)
             else:
                 count[card] = 1
                 serials[card] = num
@@ -22,14 +22,14 @@ def main():
         for card, freq in count.items():
                 heapq.heappush(pq, (-freq, -serials[card], card)) 
 
-        selected = []
+        ans = []
         i = 0
         while i < k and pq:
             freq, serial, card = heapq.heappop(pq)
-            selected.append((card, -freq))  # Restaurar frecuencia original
+            ans.append((card, -freq)) 
             i += 1
-        selected.sort()
-        for card, freq in selected:
+        ans.sort()
+        for card, freq in ans:
             print(card, freq)
         n, k = map(int, stdin.readline().split())
 
