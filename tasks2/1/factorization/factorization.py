@@ -2,19 +2,20 @@ from collections import deque
 from sys import stdin
 from math import sqrt
 def factorize(n):
-    queue = deque() 
+    stack = deque() 
     result = deque() 
-    queue.append((n, 2, [])) 
-    while len(queue) > 0:
-        current, start, current_factors =  queue.popleft()
-        if current == 1 and len(current_factors) > 1:
+    stack.append((n, 2, [])) 
+
+    while len(stack) > 0:
+        current, start, current_factors =  stack.popleft()
+        if len(current_factors) > 1 and current == 1:
             current_factors_aux = current_factors
             result.appendleft(current_factors_aux)
         else:
             i = start
             while i <= int(sqrt(current)):
                 if current % i == 0:
-                    queue.appendleft((current // i, i, current_factors + [i]))
+                    stack.appendleft((current // i, i, current_factors + [i]))
                 i+= 1
 
             if current >= start and len(current_factors) > 0:
