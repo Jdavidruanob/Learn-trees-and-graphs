@@ -37,5 +37,5 @@ def main():
         print("%.2f %.2f" % (mid * 180 / math.pi, v) )
         line = sys.stdin.readline()
     
-if __name__ == "__main__":
-    main()
+
+main()
