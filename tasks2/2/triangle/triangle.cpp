@@ -20,7 +20,7 @@ double ratio(double ad, double ab) {
 
 int main() {
     int t;
-    double ab, ac, bc, r, eps = 1e-8 ;
+    double ab, ac, bc, r, eps = 1e-10 ;
     scanf("%d", &t);
 
     for (int i = 1; i <= t; ++i) {
