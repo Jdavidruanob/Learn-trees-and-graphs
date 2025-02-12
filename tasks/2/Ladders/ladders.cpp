@@ -10,7 +10,7 @@ Esto se debe a que el método de bisección reduce el intervalo de búsqueda a l
 
 #include <iostream>
 #include <cmath>
-#include <iomanip>
+
 
 using namespace std;
 
