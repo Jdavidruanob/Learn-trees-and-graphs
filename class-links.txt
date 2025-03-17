@@ -1,0 +1,64 @@
+Aqui estan los links de las clases de agra de panotpo, junto con sus temas y su frecha
+
+1. 25/07/2024 (Bienvenida y repaso estructuras)
+https://ujaverianacali.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0ccecbf1-df1d-4a16-a014-b1b80115435f
+
+2. 30/07/2024 (Complejidad computacional, introducccion notaciones)
+https://ujaverianacali.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f396f6ea-326d-4a38-8171-b1bd01616bf5
+
+3. 01/08/2024 (Definiciones notaciones, Demostraciones, propiedades de O y intro a demostracion de algoritmos con invariantes)
+https://ujaverianacali.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=ea915fc1-f397-4b0d-9dc6-b1bf0115df57
+
+4. 06/08/2024 (Ejemplos Demostracion de correctitud de un algoritmo usando invariantes)
+https://ujaverianacali.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=eff6399b-6edb-45cb-bfe2-b1c4016153a1
+
+5. 08/08/2024 (Dividir y conquistar, Busqueda binaria)
+https://ujaverianacali.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=fe2b4cb0-b7b7-4299-a955-b1c60115e9ed
+
+6. 09/08/2024 (Ejemplos dividir y conquistar, Biseccion)
+https://ujaverianacali.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b19a2061-78a3-4074-8773-b1c701609bd6
+
+7. 13/08/2024 (Ejemplo practivo UVa, Dividir y conquistar)
+https://ujaverianacali.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6a564b99-0f4a-48bf-8e06-b1cb01617b19
+
+8. 15/08/2024 (Ejemplo adicional complicado de invariantes, y breve intro a grafos)
+https://ujaverianacali.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=42462110-a912-4978-8b62-b1cd010f9bef
+
+9. 20/08/2024 (Conceptos Grafos, Representaciones)
+https://ujaverianacali.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b95d4067-8fda-4834-8f64-b1d2015c1310
+
+10. 22/08/2024  (Recorridos de Grafos, DFS-BFS)
+https://ujaverianacali.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=23ea25f8-2b8d-4acf-ab2c-b1d40111a3f5
+
+11. 27/08/2024 (Grafos implicitos y su recorrido, ademas Concepto Grado de incidencia, Grado de adyacencia)
+https://ujaverianacali.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1e38b1ec-89b6-4afb-9273-b1d9016682d0
+
+12. 29/08/2024 (Complejidad DFS y BFS, Invariante Tarea 2 punto 2)
+https://ujaverianacali.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4182a6d3-d1f1-4e3e-89ed-b1db010bd626
+
+13. 5/03/2024 (Propiedades Recorridos BFS-DFS, tipos de aristas, Tiempo de desc y finalizacio, Orden Topo)
+https://ujaverianacali.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=15aadbec-a8e5-4c20-972f-b1e2010cb2ae
+
+14. 10/03/2024 (Demostracion orden topo, conceptos conectividad grafos)
+https://ujaverianacali.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=eb1df0d4-9d69-4ea0-80b1-b1e7016183e6
+
+15. 12/09/2024 (Algoritmos para scc, Algoritmo de Kosaraju, intro al algoritmo de Gabow)
+https://ujaverianacali.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d65af09a-2420-48c4-a932-b1e901188161
+
+16. 17/09/2024 (Algoritmo de Tarjan para puntos de articulacion)
+https://ujaverianacali.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6f7f8595-d224-4a4d-b352-b1ef00038d95
+
+17. 19/09/2024 (Tarjan para punetes, Componentes Biconexos )
+https://ujaverianacali.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a677be18-10cb-4d5d-9f75-b1f00115b085
+
+18. 24/09/2025 (Algoritmo de gabow explicado a fondo, Introduccion a algoritmos para caminos mas cortos)
+https://ujaverianacali.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=820d3c29-27a6-4aa5-a734-b1f5015fe4e5
+
+19. 26/09/2024 (Caminos mas cortos, BFS)
+https://ujaverianacali.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a9d5ea3c-00e6-4fbb-b6db-b1f70112927d
+
+20. 01/10/2024 (Caminos mas cortos, Bellmand ford moore )
+https://ujaverianacali.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=090ad2a4-4e4f-4991-a48b-b1fc0160f360
+
+21. 03/10/2024 (Caminos mas cortos, Dijskstra)
+https://ujaverianacali.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=08509116-4efc-4ed9-af36-b1fe010ff7ca
