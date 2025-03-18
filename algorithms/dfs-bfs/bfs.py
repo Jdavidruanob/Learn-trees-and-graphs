@@ -1,12 +1,12 @@
 from collections import deque
-# Recorrido bfs normal
+# BFS normal
 
 def bfsAux(G, u, vis):
     queue = deque()
     vis[u] = True
     queue.append(u)
 
-    while len(queue) > 0:
+    while len(queue) > 0: # Real bfs traversal 
         u = queue.popleft()
         for v in G[u]:
             if not vis[v]:
@@ -16,13 +16,12 @@ def bfsAux(G, u, vis):
 
 def bfs(G, u):
     vis = [False for _ in range(G)]
-
-    for node in range(len(G)):
+    for node in range(len(G)): # To ensure if the graph is non-connected
         if not vis[node]:
             bfsAux[G, u, vis]
 
 
-# Recorrido bfs calculando desc fin y tree
+# BFS with calculated desc fin and tree
 
 def bfsAux(G, u, vis):
     global t, desc, fin, tree

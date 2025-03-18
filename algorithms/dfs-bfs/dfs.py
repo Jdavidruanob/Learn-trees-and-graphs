@@ -1,21 +1,30 @@
-# Recorrido dfs normal
-
+# DFS normal
+""" dfsAux
+    Performs the actual dfs traversal 
+    from a given node
+"""
 def dfsAux(G, u, vis):
     vis[u] = True
     
     for v in G[u]:
         if not vis[v]:
             dfsAux(G, v, vis)
-            
-def dfs(G, u):
-    vis = [False for _  in range(G)]
 
+
+""" dfs
+    Inicializes the vis structure and ensures 
+    that all nodes of graph are travesed"
+    in case is it a non-connect graph     
+"""
+def dfs(G, u):
+    
+    vis = [False for _  in range(G)]
     for u in range(len(G)):
         if not vis[u]:
             dfsAux(G, u, vis)
 
-# Recorrido dfs obteniendo los tiempos de descubrimiento y finalizacion de cada nodo
 
+# DFS obtaining the discovery and finishing times of each node.
 def dfsAux(G, u, vis):
     global t, desc, fin
     vis[u] = True
@@ -38,8 +47,7 @@ def dfs(G, u):
             dfsAux(G, u, vis)
 
 
-# Recorrido dsf obteniendo el arbol, tree que contiene los padres de cada nodo
-
+# DFS obtaining the tree of travesel, that is a array who contain de father of each node
 def dfsAux(G, u, vis):
     global tree
     vis[u] = True
