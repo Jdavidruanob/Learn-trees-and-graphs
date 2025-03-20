@@ -1,110 +1,162 @@
-#include <iostream>
-#include <vector>
-#include <set>
-#include <algorithm>
+/* 
+    Jose David Ruano Burbano 8982982
+    Tarea 4 - critical
+    Arboles y grafos 2025-1
 
+    Analisis de complejidad: 
+    Siendo n el número de estaciones y m el número de conexiones entre estaciones:
+
+    - Construcción del grafo: O(n + m)
+    - Búsqueda de puntos de articulación (Tarjan): O(n + m)
+    - Calculo de estaciones desconectadas (DFS por cada punto de articulación): O(n + m) en promedio
+    - Ordenamiento de estaciones criticas: O(n log n)
+
+    En total, la complejidad esperada es O(n log n + m), aunque en el peor caso podria llegar a O(n (n + m)).
+*/
+
+#include <vector> 
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
-vector<vector<int>> G;
-vector<int> capacity;
-vector<bool> visited;
-vector<int> low, disc, parent;
-set<int> articulationSet;
-int t, n, m;
+// global vars 
+vector<bool> ap, visited;
+vector<vector<int>> graph;
+vector<int> low, disc, p, capacity;
+int t;
 
-void articulationAux(int v) {
-    t++;
-    visited[v] = true;
-    low[v] = disc[v] = t;
-    int children = 0;
+// structure
+struct CriticalStation{
+    int id;
+    int disconnected;
+    int capacity;
 
-    for (int w : G[v]) {
-        if (!visited[w]) {
-            parent[w] = v;
-            children++;
-            articulationAux(w);
-            low[v] = min(low[v], low[w]);
-
-            if (parent[v] == -1 && children > 1)
-                articulationSet.insert(v);
-            if (parent[v] != -1 && low[w] >= disc[v])
-                articulationSet.insert(v);
-        } else if (w != parent[v]) {
-            low[v] = min(low[v], disc[w]);
-        }
-    }
-}
-
-void findArticulationPoints() {
-    visited.assign(n, false);
-    low.assign(n, -1);
-    disc.assign(n, -1);
-    parent.assign(n, -1);
-    articulationSet.clear();
-    t = 0;
-
-    for (int i = 0; i < n; ++i) {
-        if (!visited[i]) {
-            articulationAux(i);
-        }
-    }
-}
-
-int countComponents(int exclude) {
-    vector<bool> tempVisited(n, false);
-    int components = 0;
-
-    for (int i = 0; i < n; i++) {
-        if (i == exclude || tempVisited[i]) continue;
-        components++;
-        vector<int> stack = {i};
-        while (!stack.empty()) {
-            int v = stack.back(); stack.pop_back();
-            tempVisited[v] = true;
-            for (int w : G[v]) {
-                if (!tempVisited[w] && w != exclude) {
-                    stack.push_back(w);
+    bool operator<(const CriticalStation & c) const{
+        bool ans;
+        if (disconnected != c.disconnected){
+            ans = disconnected > c.disconnected;
+        } else {
+            if (capacity != c.capacity){
+                ans = capacity > c.capacity;
+            } else {
+                if (id != c.id){
+                    ans = id < c.id;
                 }
             }
         }
+        return ans;
     }
-    return components;
-}
+};
 
-int main() {
-    while (cin >> n >> m) {
-        G.assign(n, vector<int>());
+// fuctions to use
+void findArtPoints(int n);
+void artPointsAux(int v);
+int dfsCount(int v, int n);
+vector<CriticalStation> find_critical_stations(int n);
+
+int main(){
+    int n, m, u, v;
+    while(cin >> n >> m){
+        graph.clear();
+        ap.clear();
+        visited.clear();
+        low.clear();
+        disc.clear();
+        p.clear();
+        capacity.clear();
+
+        graph.assign(n, vector<int> ());
         capacity.resize(n);
-        
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) 
             cin >> capacity[i];
-        }
-        
-        for (int i = 0; i < m; i++) {
-            int u, v;
+        for (int i = 0; i < m; i++){
             cin >> u >> v;
-            G[u].push_back(v);
-            G[v].push_back(u);
-        }
-        
-        findArticulationPoints();
-        if (articulationSet.empty()) {
+            graph[u].push_back(v);
+            graph[v].push_back(u);
+        }  
+
+        findArtPoints(n);
+        vector<CriticalStation> ans = find_critical_stations(n);
+        if (ans.empty()) {
             cout << "-1" << endl;
-            continue;
         }
-        
-        int maxDisconnected = 0, bestStation = -1;
-        for (int v : articulationSet) {
-            int disconnected = countComponents(v) - 1;
-            if (disconnected > maxDisconnected || 
-                (disconnected == maxDisconnected && capacity[v] > capacity[bestStation]) || 
-                (disconnected == maxDisconnected && capacity[v] == capacity[bestStation] && v < bestStation)) {
-                maxDisconnected = disconnected;
-                bestStation = v;
-            }
+        else{
+            sort(ans.begin(), ans.end());
+            cout << ans[0].id << " " << ans[0].disconnected << endl;
         }
-        
-        cout << bestStation << " " << maxDisconnected << endl;
+    
     }
     return 0;
+}
+/*
+    Use tarjan and hope algorithm to find
+    articule points
+*/
+void findArtPoints(int n) {
+    disc.assign(n, -1);
+    low.assign(n, -1);
+    p.assign(n, -1);
+    visited.assign(n, false);
+    ap.assign(n, false);
+    t = 0;
+    
+    for(int i = 0; i < n; i++) {
+        if (!visited[i])
+            artPointsAux(i);
+    }
+}
+void artPointsAux(int v) {
+    int childs = 0;
+    visited[v] = true;
+    disc[v] = t; 
+    low[v] = t;
+    t++;          
+
+    for (int w : graph[v]) {
+        if (!visited[w]) {
+            childs++;
+            p[w] = v;
+            artPointsAux(w);
+            low[v] = min(low[v], low[w]);
+
+            // Caso raiz
+            if (p[v] == -1 && childs > 1)
+                ap[v] = true;
+            // Caso no raiz
+            if (p[v] != -1 && low[w] >= disc[v])
+                ap[v] = true;
+        }
+        else if (w != p[v]) {
+            low[v] = min(low[v], disc[w]);  // Usar disc[w] en lugar de low[w]
+        }
+    }
+}
+
+/*
+    DFS to count nodes that disconnected whithout 
+    articulation point
+*/
+int dfsCount(int v, int n){
+    visited[v] = true;
+    int count = 1;
+    for (int w : graph[v]){
+        if(!visited[w])
+            count += dfsCount(w, n);
+    }
+    return count;
+}
+
+/* 
+    Function to find all critical stations
+*/
+vector<CriticalStation> find_critical_stations(int n){
+    vector<CriticalStation> ans;
+    for(int i = 0; i < n; i++){
+        if(ap[i]){
+            visited.assign(n, false);
+            int count = dfsCount(i, n) - 1;
+            ans.push_back({i, count, capacity[i]});
+        }
+    }
+    return ans;
 }
