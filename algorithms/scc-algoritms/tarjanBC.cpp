@@ -1,103 +1,116 @@
-/*
-Algoritmo de Tarjan (Componentes biconexos)
-Autor: Carlos Ramirez
-Fecha: Septiembre 19 de 2024
-
- */
-
 #include <vector>
 #include <stack>
 #include <iostream>
-#include <set>
+#include <map>
 
 using namespace std;
 
 int n, numSCC, t;
-vector<vector<int> > adj(50000);
-int visitado[50000];
-int low[50000];
-int padre[50000];
-vector<vector<pair<int, int> > > comps;
-stack<pair<int, int>> pila;
+map<char, vector<char>> adj;
+map<char, int> visitado, low, padre;
+vector<vector<pair<char, char>>> comps;
+stack<pair<char, char>> pila;
 
-void bcAux(int);
-
-void bcTarjan(){
-  int i;
-
-  for(i = 0; i < n; i++)
-    low[i] = visitado[i] = padre[i] = -1;
-
-  for(i = 0; i < n; i++){
-    if(visitado[i] == -1)
-      bcAux(i);
-
-    if(!pila.empty()){
-      comps.push_back(vector<pair<int, int> >());
-
-      while(!pila.empty()){
-	comps[comps.size() - 1].push_back(pila.top());
-	pila.pop();
-      }
+void bcAux(char v){
+    int numHijos = 0;
+    visitado[v] = low[v] = ++t;
+    cout << "\nEntra a bcAux(" << v << ")" << endl;
+    cout << "visitado." << v << " = " << visitado[v] << ", low." << v << " = " << low[v] << endl;
+    cout << "Pila: ";
+    stack<pair<char, char>> temp = pila;
+    while (!temp.empty()) {
+        cout << "(" << temp.top().first << ", " << temp.top().second << ") ";
+        temp.pop();
     }
-  }
+    cout << endl;
+
+    for(char w : adj[v]){
+        cout << "\nw: " << w << ", v: " << v << endl;
+        if(visitado[w] == -1){
+            padre[w] = v;
+            numHijos++;
+            pila.push({v, w});
+            bcAux(w);
+            low[v] = min(low[v], low[w]);
+            cout << "  Ahora low." << v << " = min(" << low[v] << ", " << low[w] << ") = " << low[v] << endl;
+            
+            if((padre[v] == -1 && numHijos > 1) || (padre[v] != -1 && low[w] >= visitado[v])){
+                comps.push_back(vector<pair<char, char>>());
+                cout << "  Creando nueva componente biconexa debido a punto de articulación en " << v << endl;
+                
+                while(pila.top() != make_pair(v, w)){
+                    comps.back().push_back(pila.top());
+                    cout << "  Moviendo arista w: " << pila.top().first << ", v: " << pila.top().second << " a la componente" << endl;
+                    pila.pop();
+                }
+                comps.back().push_back(pila.top());
+                cout << "  Moviendo arista final w: " << pila.top().first << ", v: " << pila.top().second << " a la componente" << endl;
+                pila.pop();
+            }
+        }
+        else if(w != padre[v]){
+            low[v] = min(low[v], visitado[w]);
+            cout << "  Retroceso encontrado: (w: " << w << ", v: " << v << ") actualiza low." << v << " a " << low[v] << endl;
+            if(visitado[w] < visitado[v]){
+                pila.push({v, w});
+                cout << "  Agregando arista de retroceso w: " << v << ", v: " << w << " a la pila" << endl;
+            }
+        } else {
+            cout << "  No se cumple ninguna condición y se continua" << endl;
+        }
+    }
+    cout << "\nSaliendo de bcAux(" << v << ")\n";
 }
 
-void bcAux(int v){
-  int w, numHijos;
-  visitado[v] = low[v] = ++t;
-  numHijos = 0;
-
-  for(int i = 0; i < adj[v].size(); i++){
-    w = adj[v][i];
-    if(visitado[w] == -1){
-      padre[w] = v;
-      numHijos++;
-      pila.push(make_pair(v, w));
-      bcAux(w);
-      low[v] = low[v] < low[w] ? low[v] : low[w];
-
-      //verificar si es un punto de articulacion
-      if((padre[v] == -1 && numHijos > 1) || (padre[v] != -1 && low[w] >= visitado[v])){
-	comps.push_back(vector<pair<int, int> >());
-
-	while(pila.top().first != v || pila.top().second != w){
-	  comps[comps.size() - 1].push_back(pila.top());
-	  pila.pop();
-	}
-
-	comps[comps.size() - 1].push_back(pila.top());
-	pila.pop();
-      }
+void bcTarjan(){
+    t = 0;
+    cout << "\nIniciando Tarjan" << endl;
+    for(auto& p : adj){
+        visitado[p.first] = low[p.first] = padre[p.first] = -1;
     }
-    else if(w != padre[v]){
-      low[v] = low[v] < visitado[w] ? low[v] : visitado[w];
 
-      if(visitado[w] < visitado[v])
-	pila.push(make_pair(v, w));
+    for(auto& p : adj){
+        if(visitado[p.first] == -1){
+            cout << "\nLlamando bcAux(" << p.first << ") desde bcTarjan" << endl;
+            bcAux(p.first);
+
+            if(!pila.empty()){
+                comps.push_back(vector<pair<char, char>>());
+                cout << "  Procesando pila final para componentes restantes" << endl;
+                while(!pila.empty()){
+                    comps.back().push_back(pila.top());
+                    pila.pop();
+                }
+            }
+        }
     }
-  }
 }
 
 int main(){
-  int m, i, j, aux1, aux2;
+    adj = {
+        {'a', {'b', 'c'}},
+        {'b', {'d', 'a', 'c'}},
+        {'c', {'a', 'b'}},
+        {'d', {'j', 'e', 'k', 'b'}},
+        {'j', {'d', 'l'}},
+        {'l', {'j', 'k'}},
+        {'k', {'l', 'd'}},
+        {'e', {'d', 'g'}},
+        {'g', {'e', 'f', 'h'}},
+        {'f', {'g', 'h', 'i'}},
+        {'h', {'i', 'g', 'f'}},
+        {'i', {'f', 'h'}}
+    };
 
-  cin >> n >> m;
-
-  for(i = 0; i < m; ++i){
-    cin >> aux1 >> aux2;
-    adj[aux1].push_back(aux2);
-  }
-
-  bcTarjan();
-  
-  cout << "Total de Componentes Biconexos: " << comps.size() << endl;
-  for(i = 0; i < comps.size(); ++i){
-    cout << "Componente " << i + 1 << ":";
-    for(j = 0; j < comps[i].size(); ++j)
-      cout << " (" << comps[i][j].first << ", " << comps[i][j].second << ")";
-    cout << endl;
-  }
-  
-  return 0;
+    bcTarjan();
+    
+    cout << "\nTotal de Componentes Biconexos: " << comps.size() << endl;
+    for(int i = 0; i < comps.size(); ++i){
+        cout << "Componente " << i + 1 << ":";
+        for(auto& edge : comps[i])
+            cout << " (w: " << edge.first << ", v: " << edge.second << ")";
+        cout << endl;
+    }
+    
+    return 0;
 }
